@@ -65,3 +65,20 @@ main {
   overflow: hidden;
   white-space: nowrap;
 }
+@media screen and (max-width: 1260px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 976px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
