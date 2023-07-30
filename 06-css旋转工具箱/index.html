@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07-css旋转工具箱</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(45deg, deeppink, skyblue);
+      }
+      .menu {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn {
+        position: absolute;
+        z-index: 1000;
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+
+        cursor: pointer;
+        transition: all 1.25s;
+      }
+      .btn img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .menu span {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      /* ③ 设置 hover 旋转效果 */
+      .menu span {
+        transform-origin: 100px;
+        transition-delay: calc(0.1s * var(--i));
+        transition: 0.5s;
+      }
+
+      .menu:hover span {
+        transform: rotate(calc(360deg / 8 * var(--i)));
+      }
+
+      .menu span {
+        transform: rotate(0deg) translateX(80px);
+      }
+      .menu img {
+        transform: rotate(calc(360deg / -8 * var(--i)));
+      }
+      .menu:hover .btn {
+        transform: rotate(315deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="btn"><img src="./img/add.svg" alt="" /></div>
+      <span style="--i: 0"><img src="./img/1.svg" alt="" /></span>
+      <span style="--i: 1"><img src="./img/2.svg" alt="" /></span>
+      <span style="--i: 2"><img src="./img/3.svg" alt="" /></span>
+      <span style="--i: 3"><img src="./img/4.svg" alt="" /></span>
+      <span style="--i: 4"><img src="./img/5.svg" alt="" /></span>
+      <span style="--i: 5"><img src="./img/6.svg" alt="" /></span>
+      <span style="--i: 6"><img src="./img/7.svg" alt="" /></span>
+      <span style="--i: 7"><img src="./img/8.svg" alt="" /></span>
+    </div>
+  </body>
+</html>
